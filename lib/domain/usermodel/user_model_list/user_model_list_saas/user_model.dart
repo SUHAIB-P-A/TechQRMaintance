@@ -28,8 +28,7 @@ class UserModel {
   Organization? organization;
   @JsonKey(name: 'area')
   AreaModel? area;
-  @JsonKey(name: 'service_requests')
-  List<ServicesModel>? services;
+  
 
   UserModel({
     this.id,

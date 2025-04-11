@@ -196,15 +196,7 @@ class SignupScreen extends StatelessWidget {
           message: "Password must be at least 8 characters");
       return;
     }
-    if (password.isNotEmpty && email.isNotEmpty) {
-      Future<void> storeCredentials(String email, String password) async {
-        final prefs = await SharedPreferences.getInstance();
-        await prefs.setString('email', email);
-        await prefs.setString('password', password);
-      }
-
-      storeCredentials(email, password);
-    }
+    
     final model = AuthRegModel(
         orgId: int.parse(orgid),
         full_name: username,

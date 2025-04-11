@@ -623,7 +623,7 @@ class _HomeState extends State<Home> {
               // Count tasks by status
               final todayTasks = state.servicelist
                   .where((task) =>
-                      task.status == "Pending" &&
+                      task.status == "Accepted" &&
                       task.assignedTechnician == spState.user.id &&
                       task.orgId == spState.user.orgId)
                   .length;

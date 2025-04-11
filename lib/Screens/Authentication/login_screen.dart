@@ -1,5 +1,8 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:techqrmaintance/Screens/Authentication/signup_screen.dart';
 import 'package:techqrmaintance/Screens/Widgets/custom_button.dart';
 import 'package:techqrmaintance/Screens/Widgets/custom_textfield.dart';
@@ -123,6 +126,18 @@ class LoginScreen extends StatelessWidget {
                                     message: "Please enter valid password",
                                   );
                                   return;
+                                }
+                                if (password.isNotEmpty && email.isNotEmpty) {
+                                  Future<void> storeCredentials(
+                                      String email, String password) async {
+                                    final prefs =
+                                        await SharedPreferences.getInstance();
+                                    await prefs.setString('email', email);
+                                    await prefs.setString('password', password);
+                                    log("saving completed succefully");
+                                  }
+
+                                  storeCredentials(email, password);
                                 }
                                 context.read<LogblocBloc>().add(
                                       LogblocEvent.login(email: email),
