@@ -9,7 +9,7 @@ class AfteAcceptServices {
   @JsonKey(name: 'data')
   AfterAccept? data;
 
-  AfteAcceptServices({ this.data});
+  AfteAcceptServices({this.data});
 
   factory AfteAcceptServices.fromJson(Map<String, dynamic> json) {
     return _$AfteAcceptServicesFromJson(json);

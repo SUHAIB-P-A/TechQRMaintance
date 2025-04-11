@@ -102,6 +102,7 @@ import 'package:techqrmaintance/domain/settingnotify/get_setting_notify_repo.dar
     as _i1001;
 import 'package:techqrmaintance/domain/techperfomencemodel/tech_perfomence_repo.dart'
     as _i5;
+import 'package:techqrmaintance/domain/token/get_user_token_repo.dart' as _i748;
 import 'package:techqrmaintance/domain/usermodel/single_user_repo.dart'
     as _i911;
 import 'package:techqrmaintance/domain/usermodel/technitian_list_repo.dart'
@@ -130,6 +131,8 @@ import 'package:techqrmaintance/infrastructure/getiddeviceregservices/get_id_for
     as _i670;
 import 'package:techqrmaintance/infrastructure/getlocationservices/get_loc_services.dart'
     as _i42;
+import 'package:techqrmaintance/infrastructure/gettokenservice/get_token_services.dart'
+    as _i769;
 import 'package:techqrmaintance/infrastructure/inventry_services/inventries_services.dart'
     as _i960;
 import 'package:techqrmaintance/infrastructure/orgservices/org_services.dart'
@@ -200,6 +203,7 @@ extension GetItInjectableX on _i174.GetIt {
         () => _i143.RequestScanQrEndpoindBloc(gh<_i279.ReqScanQrRepo>()));
     gh.lazySingleton<_i553.ServiceUpdateRepo>(
         () => _i733.UpdateServiceService());
+    gh.lazySingleton<_i748.GetTokenRepo>(() => _i769.GetTokenServices());
     gh.lazySingleton<_i641.UploadPdfRepo>(() => _i124.PdfServices());
     gh.lazySingleton<_i1001.GetSettingNotifyRepo>(
         () => _i1019.SetingsNotifyServices());

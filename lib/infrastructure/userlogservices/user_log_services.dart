@@ -65,7 +65,7 @@ class UserLogServices implements UserLogRepo {
       return Left(MainFailurs.clientFailure());
     } catch (e) {
       userLogApi.clearStoredToken();
-      log('Unexpected Error: $e',name: "logservice");
+      log('Unexpected Error: $e', name: "logservice");
       return Left(MainFailurs.clientFailure());
     }
   }

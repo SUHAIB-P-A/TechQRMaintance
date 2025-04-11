@@ -196,7 +196,7 @@ class SignupScreen extends StatelessWidget {
           message: "Password must be at least 8 characters");
       return;
     }
-    
+
     final model = AuthRegModel(
         orgId: int.parse(orgid),
         full_name: username,

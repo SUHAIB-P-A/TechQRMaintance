@@ -39,8 +39,6 @@ class AfterAccept {
   dynamic startedAt;
   @JsonKey(name: 'completed_at')
   dynamic completedAt;
-  
-  
 
   AfterAccept({
     this.id,
@@ -63,7 +61,8 @@ class AfterAccept {
     this.completedAt,
   });
 
-  factory AfterAccept.fromJson(Map<String, dynamic> json) => _$AfterAcceptFromJson(json);
+  factory AfterAccept.fromJson(Map<String, dynamic> json) =>
+      _$AfterAcceptFromJson(json);
 
   Map<String, dynamic> toJson() => _$AfterAcceptToJson(this);
 }

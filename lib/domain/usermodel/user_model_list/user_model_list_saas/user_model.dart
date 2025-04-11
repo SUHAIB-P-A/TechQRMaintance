@@ -28,7 +28,6 @@ class UserModel {
   Organization? organization;
   @JsonKey(name: 'area')
   AreaModel? area;
-  
 
   UserModel({
     this.id,

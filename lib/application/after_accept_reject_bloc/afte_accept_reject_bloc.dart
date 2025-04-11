@@ -14,7 +14,6 @@ class AfteAcceptRejectBloc
   final AfterAcceptRejectRepo acceptRejectRepo;
   AfteAcceptRejectBloc(this.acceptRejectRepo)
       : super(AfteAcceptRejectState.initial()) {
-
     on<Accept>((event, emit) async {
       emit(state.copyWith(
         isLoading: true,

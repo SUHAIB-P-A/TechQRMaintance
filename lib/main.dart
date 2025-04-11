@@ -102,6 +102,9 @@ class MyApp extends StatelessWidget {
           create: (context) => getit<TechListBloc>(),
         ),
         BlocProvider(
+          create: (context) => getit<GetTokenBloc>(),
+        ),
+        BlocProvider(
           create: (context) => getit<DocUploadBloc>(),
         ),
         BlocProvider(

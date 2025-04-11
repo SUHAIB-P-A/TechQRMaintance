@@ -8,7 +8,7 @@ class ServiveTuser {
   late final Dio apidio;
   bool isFetchingToken = false;
 
-  ServiveTuser(): apidio = Dio() {
+  ServiveTuser() : apidio = Dio() {
     apidio.interceptors.add(
       InterceptorsWrapper(
         onRequest: (options, handler) async {
@@ -63,10 +63,8 @@ class ServiveTuser {
       log("Fetching new token...");
 
       final prefs = await SharedPreferences.getInstance();
-      final email = prefs.getString('email') ;
-      final password = prefs.getString('password') ;
-
-      
+      final email = prefs.getString('email');
+      final password = prefs.getString('password');
 
       final response = await apidio.post(
         '$kBaseURL$kLogin',
