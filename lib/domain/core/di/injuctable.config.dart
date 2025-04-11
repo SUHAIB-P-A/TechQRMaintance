@@ -11,6 +11,8 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:get_it/get_it.dart' as _i174;
 import 'package:injectable/injectable.dart' as _i526;
+import 'package:techqrmaintance/application/after_accept_reject_bloc/afte_accept_reject_bloc.dart'
+    as _i41;
 import 'package:techqrmaintance/application/area_bloc/area_bloc.dart' as _i175;
 import 'package:techqrmaintance/application/authbloc/authbloc_bloc.dart'
     as _i600;
@@ -58,6 +60,8 @@ import 'package:techqrmaintance/application/update_user_bloc/update_user_bloc.da
     as _i208;
 import 'package:techqrmaintance/application/updateservicebloc/update_service_req_bloc.dart'
     as _i188;
+import 'package:techqrmaintance/domain/afteracceptmodel/after_accept_reject_repo.dart'
+    as _i40;
 import 'package:techqrmaintance/domain/araemodel/get_area_repo.dart' as _i431;
 import 'package:techqrmaintance/domain/authregmodel/auth_repo.dart' as _i291;
 import 'package:techqrmaintance/domain/catagorymodel/catagory_get_repo.dart'
@@ -104,6 +108,8 @@ import 'package:techqrmaintance/domain/usermodel/technitian_list_repo.dart'
     as _i740;
 import 'package:techqrmaintance/domain/usermodel/update_user_repo.dart' as _i87;
 import 'package:techqrmaintance/domain/usermodel/user_log_repo.dart' as _i765;
+import 'package:techqrmaintance/infrastructure/afterserviceacceptandrejectservices/after_service_accept_reject.dart'
+    as _i388;
 import 'package:techqrmaintance/infrastructure/areaservices/area_services.dart'
     as _i154;
 import 'package:techqrmaintance/infrastructure/authservices/auth_services.dart'
@@ -166,12 +172,16 @@ extension GetItInjectableX on _i174.GetIt {
       environment,
       environmentFilter,
     );
+    gh.lazySingleton<_i40.AfterAcceptRejectRepo>(
+        () => _i388.AfterServiceAcceptReject());
     gh.lazySingleton<_i185.CatagoryGetRepo>(() => _i1055.CatagoryServices());
     gh.lazySingleton<_i253.OrganizationRepo>(() => _i844.OrgServices());
     gh.lazySingleton<_i829.SplashCheckRepo>(() => _i757.CheckLoginServices());
     gh.lazySingleton<_i399.GetLocationRepo>(() => _i42.GetLocationServices());
     gh.lazySingleton<_i279.ReqScanQrRepo>(() => _i834.ReqQrEndpointServices());
     gh.lazySingleton<_i509.CustomerRepo>(() => _i338.CustomerServices());
+    gh.factory<_i41.AfteAcceptRejectBloc>(
+        () => _i41.AfteAcceptRejectBloc(gh<_i40.AfterAcceptRejectRepo>()));
     gh.lazySingleton<_i1064.ServicesRequestRepo>(
         () => _i1025.ServicesRequestServices());
     gh.lazySingleton<_i158.SpStoredUser>(() => _i1027.SpStoredItem());

@@ -1,6 +1,7 @@
 import 'package:techqrmaintance/Screens/home/adddevicebutton/device_reg_form.dart';
 import 'package:techqrmaintance/Screens/splash/splash_screen.dart';
 import 'package:techqrmaintance/application/GetLocation/get_location_bloc.dart';
+import 'package:techqrmaintance/application/after_accept_reject_bloc/afte_accept_reject_bloc.dart';
 import 'package:techqrmaintance/application/area_bloc/area_bloc.dart';
 import 'package:techqrmaintance/application/authbloc/authbloc_bloc.dart';
 import 'package:techqrmaintance/application/brandnadmodel/brand_and_model_bloc.dart';
@@ -105,6 +106,9 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => getit<PdfUploadBloc>(),
+        ),
+        BlocProvider(
+          create: (context) => getit<AfteAcceptRejectBloc>(),
         ),
         BlocProvider(
           create: (context) => getit<InventryBloc>(),

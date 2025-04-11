@@ -9,7 +9,7 @@ class AreaModelList {
   @JsonKey(name: 'data')
   List<AreaModelSaas>? data;
 
-  AreaModelList({this.data = const[]});
+  AreaModelList({this.data = const []});
 
   factory AreaModelList.fromJson(Map<String, dynamic> json) {
     return _$AreaModelListFromJson(json);

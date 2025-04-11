@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:techqrmaintance/Screens/Widgets/custom_button.dart';
 import 'package:techqrmaintance/Screens/Widgets/custom_textfield.dart';
 import 'package:techqrmaintance/Screens/Widgets/drop_down_widget.dart';
@@ -194,6 +195,15 @@ class SignupScreen extends StatelessWidget {
       CustomSnackbar.shows(context,
           message: "Password must be at least 8 characters");
       return;
+    }
+    if (password.isNotEmpty && email.isNotEmpty) {
+      Future<void> storeCredentials(String email, String password) async {
+        final prefs = await SharedPreferences.getInstance();
+        await prefs.setString('email', email);
+        await prefs.setString('password', password);
+      }
+
+      storeCredentials(email, password);
     }
     final model = AuthRegModel(
         orgId: int.parse(orgid),

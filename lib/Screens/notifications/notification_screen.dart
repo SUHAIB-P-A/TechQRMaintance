@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:techqrmaintance/Screens/Widgets/custom_button.dart';
 import 'package:techqrmaintance/application/servicesrequest/service_request_bloc.dart';
 import 'package:techqrmaintance/application/single_user_bloc/single_user_bloc.dart';
 import 'package:techqrmaintance/application/spbloc/spbloc_bloc.dart';
 import 'package:techqrmaintance/core/colors.dart';
-import 'package:intl/intl.dart';
 
 class NotificationScreen extends StatelessWidget {
   const NotificationScreen({super.key});
@@ -49,7 +47,7 @@ class NotificationScreen extends StatelessWidget {
                     (service) =>
                         service.assignedTechnician == spstate.user.id &&
                         service.orgId == spstate.user.orgId &&
-                        service.status == "Pending",
+                        service.status == "Pending Confirmation",
                   )
                   .toList();
 

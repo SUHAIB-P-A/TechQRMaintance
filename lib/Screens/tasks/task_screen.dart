@@ -262,7 +262,6 @@ import 'package:techqrmaintance/application/servicesrequest/service_request_bloc
 import 'package:techqrmaintance/application/single_user_bloc/single_user_bloc.dart';
 import 'package:techqrmaintance/application/spbloc/spbloc_bloc.dart';
 import 'package:techqrmaintance/core/colors.dart';
-import 'package:techqrmaintance/core/imageurls.dart';
 import 'package:techqrmaintance/domain/servicerequestmodel/services_request_saas/services_model.dart';
 
 class TaskScreen extends StatelessWidget {
@@ -334,7 +333,7 @@ class TaskScreen extends StatelessWidget {
                   (service) =>
                       service.assignedTechnician == spstate.user.id &&
                       service.orgId == spstate.user.orgId &&
-                      (service.status == "Pending" ||
+                      (service.status == "Accepted" ||
                           service.status == "In Progress"),
                 )
                 .toList();
